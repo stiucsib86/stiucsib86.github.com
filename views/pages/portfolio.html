@@ -1,0 +1,45 @@
+<div class="container main-content portfolio-container">
+
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>
+          Portfolio 
+          <small>
+            <a ng-click="portfolioList_search.details='';">All</a> | 
+            <a ng-click="portfolioList_search.details='On-going';"">On-going</a> | 
+            <a ng-click="portfolioList_search.details='Completed';">Completed</a>
+          </small>
+        </h1>
+      </div>
+      <div class="col-lg-6">
+        <form class="row" role="search" style="margin: 20px 10px 0 0;">
+          <div class="form-group">
+            <input ng-model="portfolioList_search.$" type="text" class="form-control input-lg col-lg-4" placeholder="Search: Project name, year...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <dl class="dl-horizontal" ng-repeat="portfolio in portfolioList | filter:portfolioList_search">
+    <dt>
+    <div>{{portfolio.date}}</div>
+    <div ng-show="portfolio.details.Status == 'On-going'">(On-going)</div>
+    </dt>
+    <dd>
+      <div class="row portfolio-item">
+        <div class="col-md-3">
+          <a ng-href="{{portfolio.url}}" target="_blank"><img class="img-thumbnail" ng-src="{{portfolio.screenshot}}" /></a>
+        </div>
+        <div class="col-md-9">
+          <h4>{{portfolio.title}} &nbsp;<a ng-href="{{portfolio.url}}" ng-show="portfolio.url"><i class="icon-share"></i></a></h4>
+          <ul ng-repeat="(key, value) in portfolio.details">
+            <li>{{key}}: <span ng-bind-html-unsafe="value"></span></li>
+          </ul>
+        </div>
+      </div>
+    </dd>
+  </dl>
+
+</div>
