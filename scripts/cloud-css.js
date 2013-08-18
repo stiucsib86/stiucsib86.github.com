@@ -59,7 +59,7 @@ jQuery(function() {
       var cloud = document.createElement('img');
       cloud.style.opacity = 0;
       var r = Math.random();
-      var src = '/images/cloud.png';
+      var src = 'images/cloud.png';
       (function(img) {
         img.addEventListener('load', function() {
           img.style.opacity = .8;
