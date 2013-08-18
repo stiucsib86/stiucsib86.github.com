@@ -1,0 +1,79 @@
+<div class="container main-content about-page-container">
+
+  <div class="page-header">
+    <h1>About Me</h1>
+  </div>
+
+  <div class="row about-page-item">
+    <div class="col-md-3">
+      <img class="img-thumbnail" src="http://www.gravatar.com/avatar/7d544a39a3c3177ba2a42758ba4a1567?s=150" />
+    </div>
+    <div class="col-md-9">
+      <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>Goh Bing Han</dd>
+        <div ng-repeat="ci in contactInfo">
+          <dt><i class="{{ci.icon}}"></i></dt>
+          <dd><a href="{{ci.value}}" target="_blank">{{ci.value}}</a></dd>
+        </div>
+        <dt>Resume</dt>
+        <dd>
+          <a href="/assets/files/Resume - Goh Bing Han.pdf"><i class="icon-download-alt"></i> Resume (PDF) </a>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+
+  <div>
+    <legend>Work Experience</legend>
+
+    <div ng-repeat="exp in workExperience | filter:workExperienceFilter">
+      <div class="row about-page-item">
+        <div class="col-md-3">
+          <img class="img-thumbnail" ng-src="{{exp['Logo']}}" />
+        </div>
+        <div class="col-md-9">
+          <h4>{{exp['Company Name']}} <small>({{exp['Country']}})</small></h4>
+          <p>
+            Position: {{exp['Position']}}
+          </p>
+          <p>
+            Duration {{exp['Duration']}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+
+  <div>
+    <legend>Education</legend>
+    
+    <div>
+      <div class="row about-page-item">
+        <div class="col-md-3">
+          <img class="img-thumbnail" src="/images/company/nus.jpg" />
+        </div>
+        <div class="col-md-9">
+          <h4>National University of Singapore <small>BS, Computer Engineering (2006 – 2011)</small></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+
+  <div>
+    <legend>Contact Me</legend>
+    <div>
+      <p>You can email me at hi[at]gbinghan.com</p>
+    </div>
+  </div>
+
+</div>
