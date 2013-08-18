@@ -1,4 +1,7 @@
 node_modules
-dist
+!app/bower_components/bootstrap/dist/*
+!app/bower_components/bootstrap/dist/js/*
+!app/bower_components/bootstrap/dist/css/*
 .tmp
 .sass-cache
+/dist
